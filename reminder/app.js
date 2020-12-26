@@ -84,8 +84,8 @@ const doubleNumber = numbers.map(number => number * 2)
 console.log(doubleNumber);
 // [4, 6, 8]
 
-// forEach() = przykład 1
-// forEach = pracuje na tablicy, nie zwraca nowej(zwraca undefined)
+// forEach() - przykład 1
+// forEach - pracuje na tablicy, nie zwraca nowej(zwraca undefined)
 
 const usersAge = [20, 24, 32, 48];
 usersAge.forEach(age => console.log(`w przyszłym roku użytkownik będzie miał ${age + 1} lat`))
@@ -95,3 +95,4 @@ usersAge.forEach(age => console.log(`w przyszłym roku użytkownik będzie miał
 // w przyszłym roku użytkownik będzie miał 33 lat
 // w przyszłym roku użytkownik będzie miał 49 lat
 
+// forEach() - przykład 2
