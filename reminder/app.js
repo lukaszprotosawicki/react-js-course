@@ -121,3 +121,12 @@ usersAge.forEach((age, index, array) => {
         document.body.appendChild(section);
     }
 })
+
+// Użytkownik 1
+// wiek: 18
+// Użytkownik 2
+// wiek: 23
+// Użytkownik 3
+// wiek: 37
+// Użytkownik 4
+// wiek: 61
