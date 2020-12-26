@@ -96,3 +96,28 @@ usersAge.forEach(age => console.log(`w przyszłym roku użytkownik będzie miał
 // w przyszłym roku użytkownik będzie miał 49 lat
 
 // forEach() - przykład 2
+// forEach - pracuje na tablicy, nie zwraca nowej(zwraca undefined)
+
+const usersAge = [18, 23, 37, 61];
+let usersTotalAge = 0;
+
+usersAge.forEach(age => usersTotalAge += age);
+console.log(usersTotalAge);
+//zmienna zawiera wartość 139
+
+// forEach() - przykład 2
+// forEach - pracuje na tablicy, nie zwraca nowej(zwraca undefined)
+
+const usersAge = [18, 23, 37, 61];
+
+const section = document.createElement('section')
+
+usersAge.forEach((age, index, array) => {
+    section.innerHTML += (
+        `<h1> Użytkownik ${index + 1}</h1> 
+        <p> wiek: ${age}</p>`
+    )
+    if (index === array.lenght - 1) {
+        document.body.appendChild(section);
+    }
+})
