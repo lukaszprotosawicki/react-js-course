@@ -29,7 +29,7 @@ const fn = (item, item2) => (
 )
 const result = fn('Hej!', 'Ho!')
 
-    // Metody tablic i iteratory tablic
+    // METODA TABLIC I ITERATORY TABLIC
 
     .join()
     .concat()
@@ -54,5 +54,12 @@ const users = ['adam', 'bogdan', 'czarek', 'darek'];
 
 const newUser = 'edyta';
 const allUsers = users.concat(newUser)
+console.log(allUsers);
+//['adam', 'bogdan', 'czarek', 'darek', 'edyta']
+
+// Operator spread - alternatywa dla metody concat()
+
+const users = ['adam', 'bogdan', 'czarek', 'darek'];
+const allUsers = [...users, 'edyta']
 console.log(allUsers);
 //['adam', 'bogdan', 'czarek', 'darek', 'edyta']
