@@ -1,3 +1,5 @@
+//  FUNKCJA STRZALKOWA
+
 const fn = (item) => {
     return console.log('Podany argument to ' + item)
 }
