@@ -130,3 +130,13 @@ usersAge.forEach((age, index, array) => {
 // wiek: 37
 // Użytkownik 4
 // wiek: 61
+
+// filter() - przykład 1
+//zwraca nową tablicę złożoną z tych elementów, przy których iterator zwrócił true
+
+const users = ['adam', 'bogdan', 'czarek', 'darek'];
+
+const NameWith6Letter = users.filter(user => user.length === 6)
+console.log(NameWith6Letter);
+//['bogdan','czarek']
+
