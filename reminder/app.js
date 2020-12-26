@@ -140,3 +140,14 @@ const NameWith6Letter = users.filter(user => user.length === 6)
 console.log(NameWith6Letter);
 //['bogdan','czarek']
 
+// filter() z wykorzystaniem indexOf
+//zwraca nową tablicę złożoną z tych elementów, przy których iterator zwrócił true
+
+const users = ['adam', 'bogdan', 'czarek', 'darek'];
+
+const NameWithLetterK = users.filter((user) => {
+    return (user.indexOf('k') > -1)
+})
+console.log(NameWithLetterK)
+//['czarek', 'darek']
+
