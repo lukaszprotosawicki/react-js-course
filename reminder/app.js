@@ -31,8 +31,11 @@ const result = fn('Hej!', 'Ho!')
 
     // METODA TABLIC I ITERATORY TABLIC
 
+    //tablice
     .join()
     .concat()
+
+    // iteratory tablic
     .map()
     .forEach()
     .filter()
@@ -63,3 +66,13 @@ const users = ['adam', 'bogdan', 'czarek', 'darek'];
 const allUsers = [...users, 'edyta']
 console.log(allUsers);
 //['adam', 'bogdan', 'czarek', 'darek', 'edyta']
+
+// map() - przykład 1
+//metoda map zwraca nową tablicę o tej samej długości
+
+const users = ['adam', 'bogdan', 'czarek', 'darek'];
+
+const usersFirstLetterUpperCase = users.map(user =>
+    user[0].toUpperCase())
+console.log(usersFirstLetterUpperCase);
+    // ['A', 'B', 'C', 'D']
