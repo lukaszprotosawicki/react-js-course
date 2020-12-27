@@ -12,3 +12,7 @@ const footer = (
         <p>Stopka</p>
     </footer>
 )
+
+const app = [header, main, footer]
+
+ReactDOM.render(app, document.getElementById('root'))
