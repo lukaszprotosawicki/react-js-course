@@ -116,3 +116,17 @@ dog.showName(); // imię psa to Max
 
 const dogName = dog.showName.bind(dog)
 dogName(); // imię psa to Max
+
+const cat = {
+    kids: ['ciapek', 'łapek'],
+    showKidsNames() {
+        console.log(`kot ma potomstwo: ${this.kids}`);
+        const showKidsNumber = function () {
+            console.log(this.kids.length);
+        }.bind(this)
+        showKidsNumber();
+    }
+}
+cat.showKidsNames();
+// showKidsName = kot ma potomstwo: ciapek, łapek
+// showKidsNumber = 2
