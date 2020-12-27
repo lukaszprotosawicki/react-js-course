@@ -13,9 +13,12 @@ const main = (
 )
 
 const text = "Stopka";
+const largetext = "Lorem ipsum dolor sit amet consectetur adipisicing elit. orem"
 const footer = (
     <footer>
+        {largetext}
         <p className={classBig}>{text}</p>
+
     </footer>
 )
 
