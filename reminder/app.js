@@ -173,3 +173,15 @@ const isUsersAdult = customers.findIndex(customer => customer.age < 18)
 console.log(isUsersAdult);
 // 2
 
+// find()
+// Metoda find() zwraca element, który jako pierwszy zwróci true(spełnia warunek).
+// Jeśli w żadnej iteracji nie będzie spełniony warunek, to zwróci undefined.
+
+const customers = [
+    { name: 'Adam', age: 54 },
+    { name: 'Kamil', age: 27 },
+    { name: 'Joanna', age: 12 },
+];
+
+const isUsersAdult = customers.find(customer => customer.age < 18)
+console.log(isUsersAdult);
