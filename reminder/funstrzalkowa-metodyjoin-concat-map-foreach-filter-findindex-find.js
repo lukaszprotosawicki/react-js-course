@@ -183,5 +183,7 @@ const customers = [
     { name: 'Joanna', age: 12 },
 ];
 
-const isUsersAdult = customers.find(customer => customer.age < 18)
+const isUsersAdult = customers.find(customer => customer.age >= 18)
 console.log(isUsersAdult);
+// { name: 'Adam', age: 54 }
+
