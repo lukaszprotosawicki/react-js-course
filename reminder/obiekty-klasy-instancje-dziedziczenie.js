@@ -62,3 +62,43 @@ const Poland = new Country('Polska');
 
 Poland.showCountryName(); // Metoda w instancji wskazuje Polska
 
+// klasa - dziedziczenie
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    showName() {
+        console.log(`Imię osoby to ${this.name}`);
+    }
+}
+
+class Student extends Person {
+    constructor(name = "", degrees = []) {
+        super(name)
+        this.degrees = degrees;
+    }
+    showDegrees() {
+        const completed = this.degrees.filter(degree => degree > 2)
+        console.log(`Studen ${this.name} ma stopnie ${this.degrees} i zaliczył już ${completed.length} przedmiotów`)
+    }
+}
+
+const Lukasz = new Student('Lukasz', [2, 3, 4, 5, 6, 4, 1])
+Lukasz.showDegrees(); // Student Lukasz ma stopnie: 2, 3, 4, 5, 6, 4 i zaliczył już 5 przedmiotów
+
+// Mechanizm this
+
+const car = {
+    brand: 'bmw',
+    age: 2016,
+    showAge() {
+        console.log(`samochód z ${this.age} roku`);
+    },
+    showBrand: () => {
+        console.log(`samochód marki ${this.brand}`)
+    }
+}
+
+car.showAge(); // samochód z 2016 roku
+car.showBrand(); // samochód marki undefined (dziedziczy po zakresie wyższym a w zakresie wyższym jest window. Więc window.brand zwraca nam undefined)
