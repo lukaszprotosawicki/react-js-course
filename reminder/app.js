@@ -151,3 +151,11 @@ const NameWithLetterK = users.filter((user) => {
 console.log(NameWithLetterK)
 //['czarek', 'darek']
 
+// to samo
+
+const users = ['adam', 'bogdan', 'czarek', 'darek'];
+
+const NameWithLetterK = users.filter(user => user.indexOf('k') > -1)
+console.log(NameWithLetterK)
+//['czarek', 'darek']
+
