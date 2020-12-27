@@ -12,7 +12,7 @@ const element2 = React.createElement(
 
 const element3 = (
     <div>
-        <p>Tekst</p>
+        <p id="main" className="red">Tekst</p>
     </div>
 
 )
