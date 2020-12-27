@@ -159,3 +159,17 @@ const NameWithLetterK = users.filter(user => user.indexOf('k') > -1)
 console.log(NameWithLetterK)
 //['czarek', 'darek']
 
+// findIndex()
+// Metoda findIndex zwraca indeks elementu, który jako pierwszy zwróci true(spełnia warunek). 
+// Jeśli w żadnej iteracji nie będzie spełniony warunek, to zwróci -1.
+
+const customers = [
+    { name: 'Adam', age: 54 },
+    { name: 'Kamil', age: 27 },
+    { name: 'Joanna', age: 12 },
+];
+
+const isUsersAdult = customers.findIndex(customer => customer.age < 18)
+console.log(isUsersAdult);
+// 2
+
