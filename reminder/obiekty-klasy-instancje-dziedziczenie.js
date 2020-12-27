@@ -113,3 +113,6 @@ const dog = {
 }
 
 dog.showName(); // imię psa to Max
+
+const dogName = dog.showName.bind(dog)
+dogName(); // imię psa to Max
