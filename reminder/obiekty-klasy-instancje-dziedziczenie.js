@@ -102,3 +102,14 @@ const car = {
 
 car.showAge(); // samochód z 2016 roku
 car.showBrand(); // samochód marki undefined (dziedziczy po zakresie wyższym a w zakresie wyższym jest window. Więc window.brand zwraca nam undefined)
+
+// Mechanizm this
+
+const dog = {
+    name: 'Max',
+    showName() {
+        console.log('imię psa to ' + this.name);
+    }
+}
+
+dog.showName(); // imię psa to Max
