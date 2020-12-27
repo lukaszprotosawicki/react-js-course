@@ -44,3 +44,21 @@ Spain.showCountryName(); // Nazwa kraju to Hiszpania
 Poland.showName(); // Polska
 Spain.showName(); // Hiszpania
 
+//Klasa - metody prototypu czy instancji?
+
+class Country {
+    constructor(name) {
+        this.name = name;
+        this.showCountryName = function () {
+            console.log('Metoda w instancji wskazuje: ' + this.name);
+        }
+    }
+    showCountryName() {
+        console.log(`Metoda w prototypie wskazuje ${this.name}`);
+    }
+}
+
+const Poland = new Country('Polska');
+
+Poland.showCountryName(); // Metoda w instancji wskazuje Polska
+
