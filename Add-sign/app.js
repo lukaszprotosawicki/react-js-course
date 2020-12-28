@@ -14,9 +14,10 @@ class App extends React.Component {
     }
 
     render() {
+        const btnName = "stwórz liczbę"
         return (
             <div>
-                <button onClick={this.handleClick}>Dodaj cyfrę</button>
+                <button onClick={this.handleClick}>{btnName}</button>
                 <PanelResult text={this.state.text} />
             </div>
         )
@@ -29,4 +30,4 @@ const PanelResult = (props) => {
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App btnTitle="dodaj cyfrę" />, document.getElementById('root'))
