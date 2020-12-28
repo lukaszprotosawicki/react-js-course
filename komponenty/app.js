@@ -10,5 +10,15 @@ const App = () => {
 
 // komponent klasowy, stanowy
 
+class App2 extends React.Component {
+    render() {
+        return (
+            <section>
+                <h2>komponent klasowy</h2>
+            </section>
+        )
+    }
+}
 
-ReactDOM.render(<App />, document.getElementById('root'))
+
+ReactDOM.render(<App2 />, document.getElementById('root'))
