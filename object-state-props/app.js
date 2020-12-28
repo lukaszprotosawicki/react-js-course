@@ -14,9 +14,9 @@ class ShoppingList extends React.Component {
                     {/* <li>{this.state.items1}</li>
                     <li>{this.state.items2}</li>
                     <li>{this.state.items3}</li> */}
-                    <ItemsList name="element 1" />
-                    <ItemsList name="element 2" />
-                    <ItemsList name="element 3" />
+                    <ItemList name={this.items1} />
+                    <ItemList name={this.items2} />
+                    <ItemList name={this.items3} />
                 </ul>
             </div>
         )
@@ -25,7 +25,7 @@ class ShoppingList extends React.Component {
 
 const ItemList = (props) => {
     return (
-        <li>{this.state.items1}</li>
+        <li>{props.name}</li>
     )
 }
 
