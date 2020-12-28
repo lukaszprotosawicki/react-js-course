@@ -3,13 +3,12 @@
 class App extends React.Component {
     state = {
         text: "",
-        number: 2
     }
 
     handleClick = () => {
-        const letter = "a";
+        const number = Math.floor(Math.random() * 10)
         this.setState(() => ({
-            text: this.state.text + letter
+            text: this.state.text + number
         })
         )
     }
@@ -17,7 +16,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.handleClick}>Dodaj "A"</button>
+                <button onClick={this.handleClick}>Dodaj cyfrę</button>
                 <PanelResult text={this.state.text} />
             </div>
         )
@@ -28,7 +27,6 @@ const PanelResult = (props) => {
     return (
         <h1>{props.text}</h1>
     )
-
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
