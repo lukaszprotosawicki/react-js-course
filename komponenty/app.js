@@ -11,10 +11,13 @@ const App = () => {
 // komponent klasowy, stanowy
 
 class App2 extends React.Component {
+    state = {
+        number: 0,
+    }
     render() {
         return (
             <section>
-                <h2>komponent klasowy</h2>
+                <h2>komponent klasowy {this.state.number}</h2>
             </section>
         )
     }
