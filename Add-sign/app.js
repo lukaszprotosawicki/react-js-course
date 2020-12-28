@@ -18,10 +18,17 @@ class App extends React.Component {
         return (
             <div>
                 <button onClick={this.handleClick}>Dodaj "A"</button>
-                <h1>{this.state.text}</h1>
+                <PanelResult text={this.state.text} />
             </div>
         )
     }
+}
+
+const PanelResult = (props) => {
+    return (
+        <h1>{props.text}</h1>
+    )
+
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
