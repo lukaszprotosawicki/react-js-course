@@ -5,11 +5,17 @@ class App extends React.Component {
     state = {
         text: ""
     }
+
+    handleClick = () => {
+        this.state.text += "a"
+        console.log(this.state.text)
+    }
+
     render() {
         return (
             <div>
-                <button>Dodaj "A"</button>
-                <h1></h1>
+                <button onClick={this.handleClick}>Dodaj "A"</button>
+                <h1>{this.state.text}</h1>
             </div>
         )
     }
