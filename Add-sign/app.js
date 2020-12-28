@@ -7,8 +7,13 @@ class App extends React.Component {
     }
 
     handleClick = () => {
-        this.state.text += "a"
-        console.log(this.state.text)
+        // this.state.text += "a"
+        // console.log(this.state.text)
+        const letter = "a";
+
+        this.setState({
+            text: this.state.text + letter
+        })
     }
 
     render() {
