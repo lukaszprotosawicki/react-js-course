@@ -23,10 +23,23 @@ class ShoppingList extends React.Component {
     }
 }
 
-const ItemList = (props) => {
-    return (
-        <li>{props.name} - {props.example}</li>
-    )
+// const ItemList = (props) => {
+//     return (
+//         <li>{props.name} - {props.example}</li>
+//     )
+// }
+
+class ItemList extends React.Component {
+    render() {
+        return (
+            <li>{this.props.name} - {this.props.example}</li>
+        )
+    }
 }
+
+
+
+
+
 
 ReactDOM.render(<ShoppingList />, document.getElementById('root'))
