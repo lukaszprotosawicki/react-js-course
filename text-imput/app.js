@@ -3,19 +3,25 @@ class App extends React.Component {
         value: ""
     }
 
-    handleImputChange(e) {
+    handleImputChange = (e) => {
         console.log(e.target.value);
         this.setState({
             value: e.target.value
         })
     }
 
+    handleResetClick = () => {
+        this.setState({
+            value: ""
+        })
+    }
+
     render() {
         return (
             <div>
-                <input placeholder="wpisz..." onChange={this.handleImputChange.bind(this)} type="text" />
-                <button>Reset</button>
-                <h1 className="title">{this.state.value}</h1>
+                <input value={this.state.value} placeholder="wpisz..." onChange={this.handleImputChange} type="text" />
+                <button onClick={this.handleResetClick}>Reset</button>
+                <h1 className="title">{this.state.value.toUpperCase()}</h1>
             </div>
         )
     }
