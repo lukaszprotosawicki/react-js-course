@@ -6,7 +6,7 @@ class Counter extends React.Component {
     }
 
     handleMathClick = (type, number = 1) => {
-        if (type === "substraction") {
+        if (type === "subtraction") {
             this.setState(prevState => (
                 {
                     count: prevState.count + 1,
@@ -33,21 +33,21 @@ class Counter extends React.Component {
     render() {
         return (
             <div>
-                {/* <button onClick={this.handleMathClick.bind(this, "substraction", 10)}>-10</button>
-                <button onClick={() => this.handleMathClick("substraction", 1)}>-1</button>
+                {/* <button onClick={this.handleMathClick.bind(this, "subtraction", 10)}>-10</button>
+                <button onClick={() => this.handleMathClick("subtraction", 1)}>-1</button>
                 <button onClick={this.handleMathClick.bind(this, "reset")}>Reset</button>
                 <button onClick={this.handleMathClick.bind(this, "addition", 1)}>+1</button>
                 <button onClick={this.handleMathClick.bind(this, "addition", 10)}>+10</button> */}
                 <MathButton
                     name="-10"
                     number="10"
-                    type="substraction"
+                    type="subtraction"
                     click={this.handleMathClick}
                 />
                 <MathButton
                     name="-1"
                     number="1"
-                    type="substraction"
+                    type="subtraction"
                     click={this.handleMathClick}
                 />
                 <MathButton
@@ -67,8 +67,11 @@ class Counter extends React.Component {
                     type="addition"
                     click={this.handleMathClick}
                 />
-                <h1>Liczba kliknięć: {this.state.count}</h1>
-                <h1>Wynik: {this.state.result}</h1>
+                <ResultPanel
+                    count={this.state.count}
+                    result={this.state.result}
+                />
+
             </div>
         )
     }
@@ -80,6 +83,15 @@ const MathButton = (props) => {
     // console.log(props);
     return (
         <button onClick={() => props.click(props.type, number)}>{props.name}</button>
+    )
+}
+
+const ResultPanel = (props) => {
+    return (
+        <div>
+            <h1>Liczba kliknięć: {props.count}{props.count > 10 ? <span>. Przeciążenie procesora</span> : null}</h1>
+            <h1>Wynik: {props.result}</h1>
+        </div>
     )
 }
 
