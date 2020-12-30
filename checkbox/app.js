@@ -1,5 +1,7 @@
-const PositiveMessage = () => <p>Możesz obejrzeć film. Zapraszamy!</p>
-const NegativeMessage = () => <p>Nie możesz obejrzeć tego filmu jeśli masz mniej niż 16 lat!</p>
+// const PositiveMessage = () => <p>Możesz obejrzeć film. Zapraszamy!</p>
+// const NegativeMessage = () => <p>Nie możesz obejrzeć tego filmu jeśli masz mniej niż 16 lat!</p>
+
+const ValidationMessage = (props) => <p>{props.txt}</p>
 
 
 class TicketShop extends React.Component {
@@ -26,9 +28,9 @@ class TicketShop extends React.Component {
     displayMessage = () => {
         if (this.state.isFormSubmitted) {
             if (this.state.isConfirmed) {
-                return <PositiveMessage />
+                return <ValidationMessage txt="Możesz obejrzeć film. Zapraszamy!" />
             } else {
-                return <NegativeMessage />
+                return <ValidationMessage txt="Nie możesz obejrzeć tego filmu jeśli masz mniej niż 16 lat!" />
             }
         } else {
             return null
