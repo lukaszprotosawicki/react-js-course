@@ -13,6 +13,15 @@ class TicketShop extends React.Component {
             isConfirmed: !this.state.isConfirmed
         })
     }
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+        if (!this.state.isFormSubmitted) {
+            this.setState({
+                isFormSubmitted: true
+            })
+        }
+    }
+
     displayMessage = () => {
         if (this.state.isFormSubmitted) {
             if (this.state.isConfirmed) {
@@ -20,13 +29,15 @@ class TicketShop extends React.Component {
             } else {
                 return <NegativeMessage />
             }
+        } else {
+            return null
         }
     }
     render() {
         return (
             <div>
                 <h1>Kup bilet na horror roku!</h1>
-                <form>
+                <form onSubmit={this.handleFormSubmit}>
                     <input type="checkbox" id="age" onChange={this.handleCheckboxChange} checked={this.state.isConfirmed} />
                     <label htmlFor="age">Mam co najmniej 16 lat</label>
                     <br />
