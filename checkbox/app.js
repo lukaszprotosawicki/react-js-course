@@ -10,7 +10,8 @@ class TicketShop extends React.Component {
     }
     handleCheckboxChange = () => {
         this.setState({
-            isConfirmed: !this.state.isConfirmed
+            isConfirmed: !this.state.isConfirmed,
+            isFormSubmitted: false
         })
     }
     handleFormSubmit = (e) => {
