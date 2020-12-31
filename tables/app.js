@@ -1,11 +1,15 @@
+const Item = (props) => <li>{`owoc ${props.content}`}</li>
+
+
 class ListItem extends React.Component {
     state = {
         items: ["jablko", "sliwka", "gruszka"]
     }
     render() {
+        const Items = this.state.items.map(item => <Item key={item} content={item} />)
         return (
             <ul>
-                {this.state.items.map(item => <li key={item}> {`owoc ${item}`}</li>)}
+                {Items}
             </ul>
         )
     }
