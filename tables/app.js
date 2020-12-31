@@ -19,17 +19,20 @@ const data = {
     ]
 }
 
-
-
-const Item = (props) => <li>{`owoc ${props.content}`}</li>
-
+const Item = (props) => (
+    <div>
+        <h1>Użytkownik {props.user.name}</h1>
+        <h2>Ma {props.user.age}</h2>
+    </div>
+)
 
 class ListItem extends React.Component {
     // state = {
     //     items: ["jablko", "sliwka", "gruszka"]
     // }
     render() {
-        const Items = this.state.items.map(item => <Item key={item} content={item} />)
+        const users = this.props.data.users
+        const Items = users.map(user => <Item key={user.id} user={user} />)
         return (
             <ul>
                 {Items}
@@ -38,4 +41,4 @@ class ListItem extends React.Component {
     }
 }
 
-ReactDOM.render(<ListItem />, document.getElementById('root'))
+ReactDOM.render(<ListItem data={data} />, document.getElementById('root'))
