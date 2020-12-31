@@ -4,34 +4,50 @@ const data = {
             id: 1,
             age: 32,
             name: "Lukasz",
+            sex: "male"
         },
         {
             id: 2,
             age: 29,
             name: "Patryk",
+            sex: "male"
         },
         {
             id: 3,
             age: 33,
             name: "Kamil",
-        }
+            sex: "male"
+        },
+        {
+            id: 4,
+            age: 19,
+            name: "Angelika",
+            sex: "female"
+        },
+        {
+            id: 5,
+            age: 53,
+            name: "Renata",
+            sex: "female"
+        },
 
     ]
 }
 
-const Item = (props) => (
-    <div>
-        <h1>Użytkownik {props.user.name}</h1>
-        <h2>Ma {props.user.age}</h2>
+const Item = ({ user }) => (
+    <div className="userInfo">
+        <h1>Użytkownik {user.name}</h1>
+        <p>Informacje o użytkowniku</p>
+        <p>Wiek użytkownika: <strong>{user.age}</strong></p>
+        <p>Płeć użytkownika: {user.sex}</p>
     </div>
 )
 
 class ListItem extends React.Component {
-    // state = {
-    //     items: ["jablko", "sliwka", "gruszka"]
-    // }
+    state
     render() {
-        const users = this.props.data.users
+        let users = this.props.data.users
+        users = users.filter((user) => user.sex === "female")
         const Items = users.map(user => <Item key={user.id} user={user} />)
         return (
             <ul>
