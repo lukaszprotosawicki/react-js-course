@@ -1,7 +1,21 @@
 class Form extends React.Component {
     state = {}
     render() {
-        return (  );
+        return (
+            <form>
+                <label>
+                    Podaj imię:
+                    <input type="text" name="name" />
+                </label>
+                <br />
+                <label>
+                    Podaj email:
+                    <input type="email" name="email" />
+                </label>
+                <br />
+                <button>Zapisz</button>
+            </form>
+        );
     }
 }
 
