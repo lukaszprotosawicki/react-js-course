@@ -5,7 +5,7 @@ const Header = (props) => {
 
     return (
         <header>
-            <h2>Wielkość zamówienia: {activeItems.length}</h2>
+            <h2>Wielkość zamówienia: {number}</h2>
             <h2>Do zapłaty: {number ? `${number * 10} złotych` : 'nie kupujesz, to nie płacisz'} </h2>
         </header>
     )
