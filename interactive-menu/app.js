@@ -1,17 +1,20 @@
 class App extends React.Component {
     state = {
         items: [
-            { id: 1, content: "kawa", active: true },
-            { id: 2, content: "ziemniaki", active: false },
-            { id: 3, content: "bułka", active: false },
-            { id: 4, content: "banan", active: false },
-            { id: 5, content: "herbata", active: false },
-            { id: 6, content: "makaron", active: true },
+            { id: 1, name: "kawa", active: true },
+            { id: 2, name: "ziemniaki", active: false },
+            { id: 3, name: "bułka", active: false },
+            { id: 4, name: "banan", active: false },
+            { id: 5, name: "herbata", active: false },
+            { id: 6, name: "makaron", active: true },
         ]
     }
     render() {
         return (
-            <div>Menu</div>
+            <div>
+                <Header items={this.state.items} />
+                <ListItems />
+            </div>
         );
     }
 }
