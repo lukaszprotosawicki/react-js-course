@@ -2,7 +2,8 @@ class Form extends React.Component {
     state = {
         city: "Gorzów",
         text: "",
-        isLoved: true
+        isLoved: true,
+        number: "2"
     }
 
     handleCityChange = event => {
@@ -22,6 +23,11 @@ class Form extends React.Component {
             isLoved: e.target.checked
         })
     }
+    handleVisitsChange(e) {
+        this.setState({
+            number: e.target.value
+        })
+    }
 
     render() {
         return (
@@ -38,6 +44,17 @@ class Form extends React.Component {
                 <label>
                     Czy lubisz to miasto?
                     <input type="checkbox" checked={this.state.isLoved} onChange={this.handleIsLovedChange} />
+                </label>
+                <br />
+                <label>
+                    Ile razy byliście w tym mieście?
+                    <select value={this.state.number} onChange={this.handleVisitsChange.bind(this)}>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="more">więcej</option>
+                    </select>
                 </label>
 
             </div>
