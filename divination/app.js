@@ -24,8 +24,9 @@ class Draw extends React.Component {
         options.push(this.state.value)
         this.setState({
             options,
+            value: ''
         })
-        alert(`Wróżba dodana. Aktualne wróżny: ${options}`)
+        alert(`Wróżba dodana. Aktualne wróżbny: ${options}`)
     }
     render() {
         return (
