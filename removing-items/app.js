@@ -18,22 +18,48 @@ class RemovingItems extends React.Component {
             { id: 6, name: 'Renata P' }
         ]
     }
-    handleDelete = (id) => {
-        // console.log(this, id)
-        const people = [...this.state.people];
-        const index = people.findIndex(person => person.id === id)
-        // console.log(index);
-        // console.log(people);
-        people.splice(index, 1)
+    // handleDelete = (id) => {
+    //     // console.log(this, id)
+    //     const people = [...this.state.people];
+    //     const index = people.findIndex(person => person.id === id)
+    //     // console.log(index);
+    //     // console.log(people);
+    //     people.splice(index, 1)
+    //     this.setState({
+    //         people
+    //     })
+    // }
+
+    handleDelete(name) {
+        // let people = Array.from(this.state.people)
+        let people = this.state.people.slice()
+        // console.log(people)
+        people = people.filter(person => name !== person.name)
+        console.log(people)
         this.setState({
             people
         })
     }
 
     render() {
+        // const people = this.state.people.map(person => (
+        //     <Person
+        //         key={person.id}
+        //         name={person.name}
+        //         delete={this.handleDelete.bind(this, person.id)}
+        //     />
+        // )
+        const people = this.state.people.map(person => (
+            <Person
+                key={person.id}
+                name={person.name}
+                delete={this.handleDelete.bind(this, person.name)}
+            />
+        )
+        )
         return (
             <ul>
-                {this.state.people.map(person => <Person key={person.id} name={person.name} delete={this.handleDelete.bind(this, person.id)} />)}
+                {people}
             </ul>
         );
     }
