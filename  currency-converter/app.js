@@ -36,7 +36,10 @@ class ExchangeCounter extends React.Component {
         })
     }
     render() {
-        const { amount, ratioDollar, ratioEuro } = this.state;
+        const { amount } = this.state;
+        const calculators = this.currencies.map(currency => (
+            <Cash key={currency.id} ratio={currency.ratio} title={currency.title} cash={amount} />
+        ))
         return (
             <div className="app">
                 <label>
@@ -44,8 +47,8 @@ class ExchangeCounter extends React.Component {
                         value={this.state.amount}
                         onChange={this.handleChange} />
                 </label>
-                {/* <Cash cash={amount} ratio={ratioDollar} title="Wartość w dolarach: " />
-                <Cash cash={amount} ratio={ratioEuro} title="Wartość w euro: " /> */}
+
+                {calculators}
             </div>
         )
     }
